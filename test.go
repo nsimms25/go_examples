@@ -25,12 +25,12 @@ func string_contains() {
 
 	fmt.Println("Please input a string to search.")
 	scanner := bufio.NewScanner(os.Stdin)
-	scanner.Scan() // use `for scanner.Scan()` to keep reading
+	scanner.Scan()
 	string_to_search = scanner.Text()
 
 	fmt.Println("Please input a substring to search for.")
 	scanner = bufio.NewScanner(os.Stdin)
-	scanner.Scan() // use `for scanner.Scan()` to keep reading
+	scanner.Scan()
 	sub_string = scanner.Text()
 
 	if strings.Contains(string_to_search, sub_string) {
@@ -41,11 +41,28 @@ func string_contains() {
 	}
 }
 
+func cut_string() {
+	fmt.Println("What string do you want to cut?")
+	scanner := bufio.NewScanner(os.Stdin)
+	scanner.Scan()
+	full_string := scanner.Text()
+
+	fmt.Println("What is the separator?")
+	scanner = bufio.NewScanner(os.Stdin)
+	scanner.Scan()
+	string_sep := scanner.Text()
+
+	before_str, after_str, found_bool := strings.Cut(full_string, string_sep)
+
+	fmt.Printf(`Before string: %s; After string: %s; Found: %t`, before_str, after_str, found_bool)
+}
+
 func ints() {
 
 }
 
 func main() {
 	//strings()
-	string_contains()
+	//string_contains()
+	cut_string()
 }
