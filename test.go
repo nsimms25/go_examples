@@ -8,14 +8,22 @@ import (
 )
 
 func strings_examples() {
-	var first_string string = "First String, "
-	var second_string string = "Second string."
+	//Combining strings, using '+' operator.
+	var first_string string = "First String example, "
+	var second_string string = "Second string example."
 	var combined_strings = first_string + second_string
 	fmt.Println(combined_strings)
 
+	//Using string indexing.
 	var new_string string = "0123456789"
 	var character_string string = string(new_string[0])
 	fmt.Println(character_string)
+
+	//Finding a substring index, printing from substring start to end (using slicing).
+	var str_index int = 0
+	str_index = strings.Index(first_string, "String")
+	fmt.Printf("String index: %d \n", str_index)
+	fmt.Printf(first_string[str_index : len(first_string)-1])
 
 }
 
@@ -77,8 +85,8 @@ func ints() {
 }
 
 func main() {
-	//strings()
+	strings_examples()
 	//string_contains()
 	//cut_string()
-	split_string()
+	//split_string()
 }
