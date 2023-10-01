@@ -28,9 +28,11 @@ func strings_examples() {
 }
 
 func string_contains() {
+	//Variable definition.
 	var string_to_search string = ""
 	var sub_string string = ""
 
+	//Get strings from user input using a buffer scanner.
 	fmt.Println("Please input a string to search.")
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Scan()
@@ -41,6 +43,7 @@ func string_contains() {
 	scanner.Scan()
 	sub_string = scanner.Text()
 
+	//Test if substring is in string and print accordingly.
 	if strings.Contains(string_to_search, sub_string) {
 		fmt.Printf(`Substring '%s' is in '%s'.`, sub_string, string_to_search)
 	}
@@ -50,6 +53,7 @@ func string_contains() {
 }
 
 func cut_string() {
+	//Get user input via buffer scanner.
 	fmt.Println("What string do you want to cut?")
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Scan()
@@ -60,20 +64,25 @@ func cut_string() {
 	scanner.Scan()
 	string_sep := scanner.Text()
 
+	//Cut returns 3: string before separator, string after separator, and bool if separator is present.
 	before_str, after_str, found_bool := strings.Cut(full_string, string_sep)
 
+	//Print the 3 returns of cut.
 	fmt.Printf(`Before string: %s; After string: %s; Found: %t`, before_str, after_str, found_bool)
 }
 
 func split_string() {
+	//Get user input string.
 	fmt.Println("What string do you want to split?")
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Scan()
 	full_string := scanner.Text()
 
+	//Separate string on whitespace, return array of strings.
 	split_string := strings.Fields(full_string)
 	array_len := len(split_string)
 
+	//Print array of strings on new lines.
 	for i := 0; i < array_len; i++ {
 		fmt.Println(split_string[i])
 	}
@@ -85,7 +94,7 @@ func ints() {
 }
 
 func main() {
-	strings_examples()
+	//strings_examples()
 	//string_contains()
 	//cut_string()
 	//split_string()
