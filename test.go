@@ -89,6 +89,18 @@ func split_string() {
 
 }
 
+func change_case(str string, change_to string) string {
+	if change_to == "lower" {
+		changed_string := strings.ToLower(str)
+		return changed_string
+	}
+	if change_to == "upper" {
+		changed_string := strings.ToUpper(str)
+		return changed_string
+	}
+	return "Could not determine case."
+}
+
 func ints() {
 
 }
@@ -101,4 +113,8 @@ func main() {
 
 	//In order to run multiple files use: 'go run test.go another.go'
 	//replace_string() //replace_string resides in the 'another.go' file.
+
+	//use the case change func defined that can change to both upper or lower.
+	fmt.Printf("After case change: %s \n", change_case("THIS ALL NEEDS TO BE LOWERCASE.", "lower"))
+	fmt.Printf("After case change: %s \n", change_case("Make this all uppercase.", "upper"))
 }
