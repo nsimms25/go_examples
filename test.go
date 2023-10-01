@@ -57,6 +57,21 @@ func cut_string() {
 	fmt.Printf(`Before string: %s; After string: %s; Found: %t`, before_str, after_str, found_bool)
 }
 
+func split_string() {
+	fmt.Println("What string do you want to split?")
+	scanner := bufio.NewScanner(os.Stdin)
+	scanner.Scan()
+	full_string := scanner.Text()
+
+	split_string := strings.Fields(full_string)
+	array_len := len(split_string)
+
+	for i := 0; i < array_len; i++ {
+		fmt.Println(split_string[i])
+	}
+
+}
+
 func ints() {
 
 }
@@ -64,5 +79,6 @@ func ints() {
 func main() {
 	//strings()
 	//string_contains()
-	cut_string()
+	//cut_string()
+	split_string()
 }
