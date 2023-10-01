@@ -98,4 +98,7 @@ func main() {
 	//string_contains()
 	//cut_string()
 	//split_string()
+
+	//In order to run multiple files use: 'go run test.go another.go'
+	//replace_string() //replace_string resides in the 'another.go' file.
 }
