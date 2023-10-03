@@ -98,7 +98,7 @@ func change_case(str string, change_to string) string {
 		changed_string := strings.ToUpper(str)
 		return changed_string
 	}
-	return "Could not determine case."
+	return ""
 }
 
 func ints() {
@@ -117,4 +117,5 @@ func main() {
 	//use the case change func defined that can change to both upper or lower.
 	fmt.Printf("After case change: %s \n", change_case("THIS ALL NEEDS TO BE LOWERCASE.", "lower"))
 	fmt.Printf("After case change: %s \n", change_case("Make this all uppercase.", "upper"))
+	fmt.Printf("After case change: %s \n", change_case("Make this all uppercase.", "something")) //This should return an empty string, cases not met.
 }
