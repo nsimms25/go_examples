@@ -115,7 +115,10 @@ func main() {
 	//replace_string() //replace_string resides in the 'another.go' file.
 
 	//use the case change func defined that can change to both upper or lower.
-	fmt.Printf("After case change: %s \n", change_case("THIS ALL NEEDS TO BE LOWERCASE.", "lower"))
-	fmt.Printf("After case change: %s \n", change_case("Make this all uppercase.", "upper"))
-	fmt.Printf("After case change: %s \n", change_case("Make this all uppercase.", "something")) //This should return an empty string, cases not met.
+	//fmt.Printf("After case change: %s \n", change_case("THIS ALL NEEDS TO BE LOWERCASE.", "lower"))
+	//fmt.Printf("After case change: %s \n", change_case("Make this all uppercase.", "upper"))
+	//fmt.Printf("After case change: %s \n", change_case("Make this all uppercase.", "something")) //This should return an empty string, cases not met.
+
+	//use fun_with_maps.go file to test map functions
+	map_practice()
 }
